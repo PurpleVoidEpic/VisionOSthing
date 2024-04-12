@@ -29,6 +29,12 @@ jobs:
           sudo systemsetup -setremotelogin on
           sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 
+      - name: Set SSH password for user and root
+        run: |
+          echo 'user:root' | sudo chpasswd
+          echo 'user:root' | sudo chpasswd
+
       - name: Start ngrok and forward SSH port
         run: |
           ngrok tcp 22
+
