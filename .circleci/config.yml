@@ -1,11 +1,11 @@
 version: 2.1
 
+orbs:
+  mac: circleci/macos@2.3.0
+
 jobs:
   build:
     macos:
       xcode: 14.3.1
     steps:
-      - checkout
-      - run:
-          name: Enable VNC
-          command: mac/enable-vnc
+      - mac/enable-vnc
